@@ -2,15 +2,10 @@
 {
     partial class Form1
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+   
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +17,7 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
+
         private void InitializeComponent()
         {
             rtbEditor = new RichTextBox();
@@ -38,45 +30,48 @@
             // 
             // rtbEditor
             // 
+            rtbEditor.BackColor = SystemColors.ControlLightLight;
             rtbEditor.Dock = DockStyle.Fill;
+            rtbEditor.ForeColor = SystemColors.InactiveCaptionText;
             rtbEditor.Location = new Point(0, 0);
             rtbEditor.Name = "rtbEditor";
             rtbEditor.Size = new Size(1464, 842);
             rtbEditor.TabIndex = 0;
             rtbEditor.Text = "";
-            // 
-            // btnUndo
-            // 
+            rtbEditor.TextChanged += RtbEditorTextChanged; // khớp với Form1.cs
+                                                           // 
+                                                           // btnUndo
+                                                           // 
             btnUndo.Location = new Point(101, 87);
             btnUndo.Name = "btnUndo";
             btnUndo.Size = new Size(385, 119);
             btnUndo.TabIndex = 1;
             btnUndo.Text = "Undo (Ctrl+Z)";
             btnUndo.UseVisualStyleBackColor = true;
-            btnUndo.Click += btnUndo_Click;
-            // 
-            // btnRedo
-            // 
+            btnUndo.Click += BtnUndoClick; // đổi tên cho khớp
+                                           // 
+                                           // btnRedo
+                                           // 
             btnRedo.Location = new Point(566, 87);
             btnRedo.Name = "btnRedo";
             btnRedo.Size = new Size(385, 119);
             btnRedo.TabIndex = 2;
             btnRedo.Text = "Redo (Ctrl+Y)";
             btnRedo.UseVisualStyleBackColor = true;
-            btnRedo.Click += btnRedo_Click;
-            // 
-            // btnSave
-            // 
+            btnRedo.Click += BtnRedoClick; // đổi tên cho khớp
+                                           // 
+                                           // btnSave
+                                           // 
             btnSave.Location = new Point(1025, 87);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(385, 119);
             btnSave.TabIndex = 3;
             btnSave.Text = "Save (Ctrl+S)";
             btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += btnSave_Click;
-            // 
-            // panel1
-            // 
+            btnSave.Click += BtnSaveClick; // đổi tên cho khớp
+                                           // 
+                                           // panel1
+                                           // 
             panel1.Controls.Add(btnUndo);
             panel1.Controls.Add(btnRedo);
             panel1.Controls.Add(btnSave);
@@ -91,15 +86,14 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1464, 842);
-            Controls.Add(panel1);
-            Controls.Add(rtbEditor);
+            Controls.Add(rtbEditor);  // RichTextBox trước
+            Controls.Add(panel1);     // Panel sau
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
+            Load += Form1_Load;       // khớp với Form1.cs
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
-
         #endregion
 
         private RichTextBox rtbEditor;
